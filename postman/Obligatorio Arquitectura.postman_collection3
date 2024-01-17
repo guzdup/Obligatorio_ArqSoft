@@ -1,0 +1,809 @@
+{
+	"info": {
+		"_postman_id": "98019a53-b578-4009-ac4b-a4a372feb638",
+		"name": "Obligatorio Arquitectura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29858392"
+	},
+	"item": [
+		{
+			"name": "Enviar certificado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentID\": \"77777775\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vaccineCertification?nameVaccine=VacN4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vaccineCertification"
+					],
+					"query": [
+						{
+							"key": "nameVaccine",
+							"value": "VacN4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Administrar vacuna",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6NTU1NTU1NTUsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDY4Mjg3MiwiZXhwIjoxNzAwNzY5MjcyfQ.Ii6wYwbA8nRjFSPwqRltUcaDhkA1VTNUKydGeZRYzSU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentID\": \"55555555\",\r\n    \"nameCode\": \"VacN8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/vaccineAdministration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"vaccineAdministration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historial vacunacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/vaccinationHistory?document=51368686",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"vaccinationHistory"
+					],
+					"query": [
+						{
+							"key": "document",
+							"value": "51368686"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agendar vacuna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documentID\": \"51368686\",\r\n  \"email\": \"obliarqui@gmail.com\",\r\n  \"telephone\": \"094144290\",\r\n  \"date\": \"24/12/2023\",\r\n  \"direction\": \"Calle Principal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/sheduleVaccine?vaccine=VacN8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"sheduleVaccine"
+					],
+					"query": [
+						{
+							"key": "vaccine",
+							"value": "VacN8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar vacuna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nameCode\": \"VacN1\",\r\n  \"comercialName\": \"Vacuna 1\",\r\n  \"laboratory\": \"Laboratorio 1\",\r\n  \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/register/vaccine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"register",
+						"vaccine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6OTk5OTk5OTksInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5OTY3MTczMCwiZXhwIjoxNjk5NzU4MTMwfQ.TKjH9cp2X8c0aD7k2uwPqocZn29A9mSWnmhx7f1xSFY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Enrique\",\n    \"lastName\": \"Dupont\",\n    \"documentID\": 12207905,\n    \"password\": \"335dp6910\",\n    \"confirmPassword\": \"335dp6910\",\n    \"dateOfBirth\": \"28/08/1958\",\n    \"address\": \"Murillo\",\n    \"telephone\": 668955869,\n    \"email\": \"cnehdg@gmail.com\",\n    \"picture\": \"foto1\",\n    \"role\": \"u\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDMyMTkwNSwiZXhwIjoxNzAwNDA4MzA1fQ.kItSygTEkY74_yQsuxNl7CcwRK3F586g1F57quPVQ-8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ugo\",\n    \"lastName\": \"Foscolo\",\n    \"documentID\": 10091827,\n    \"password\": \"deiSepolcri\",\n    \"confirmPassword\": \"deiSepolcri\",\n    \"dateOfBirth\": \"06/02/1778\",\n    \"address\": \"Grecia\",\n    \"telephone\": 99895586,\n    \"email\": \"julietasarantes@gmail.com\",\n    \"picture\": \"foto1\",\n    \"role\": \"u\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User3 Doctor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDQwODk0MCwiZXhwIjoxNzAwNDk1MzQwfQ.Wg0PIaj6vs_kNP0XN5sx_WndEGUBS2SA4_Hbtcv8Z48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Arthur\",\n    \"lastName\": \"Doyle\",\n    \"documentID\": 17071930,\n    \"password\": \"SherlockHolmes\",\n    \"confirmPassword\": \"SherlockHolmes\",\n    \"dateOfBirth\": \"07/07/1859\",\n    \"address\": \"Inglaterra\",\n    \"telephone\": 99895586,\n    \"email\": \"ehdg@adinet.com\",\n    \"picture\": \"foto1\",\n    \"role\": \"p\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User4 Administrative",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDQwODk0MCwiZXhwIjoxNzAwNDk1MzQwfQ.Wg0PIaj6vs_kNP0XN5sx_WndEGUBS2SA4_Hbtcv8Z48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Victor\",\n    \"lastName\": \"Hugo\",\n    \"documentID\": 17071930,\n    \"password\": \"LosMiserables\",\n    \"confirmPassword\": \"LosMiserables\",\n    \"dateOfBirth\": \"26/02/1802\",\n    \"address\": \"Francia\",\n    \"telephone\": 99895586,\n    \"email\": \"Vh@toto.com\",\n    \"picture\": \"foto1\",\n    \"role\": \"a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"document\": 11111111,\n  \"password\": \"12345678\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"document\": 11111111,\n  \"password\": \"12345678\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"document\": 11111111,\n  \"password\": \"12345678\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Professional",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/registerProfessional",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"registerProfessional"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register appointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDQwODk0MCwiZXhwIjoxNzAwNDk1MzQwfQ.Wg0PIaj6vs_kNP0XN5sx_WndEGUBS2SA4_Hbtcv8Z48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"documentID\": 10091820,\n    \"date\": \"12/02/2024\",\n    \"time\": \"12:02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Doctor Employee1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDQwODk0MCwiZXhwIjoxNzAwNDk1MzQwfQ.Wg0PIaj6vs_kNP0XN5sx_WndEGUBS2SA4_Hbtcv8Z48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Arthur\",\n    \"lastName\": \"Doyle\",\n    \"documentID\": 17071943,\n    \"password\": \"SherlockHolmes\",\n    \"dateOfBirth\": \"07/07/1859\",\n    \"address\": \"Inglaterra\",\n    \"telephone\": 99895586,\n    \"email\": \"e@toto.com\",\n    \"professionalDoctor\": true,\n    \"specialty\": \"general\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Administrative Employee1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MTExMTExMTEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcwMDQwODk0MCwiZXhwIjoxNzAwNDk1MzQwfQ.Wg0PIaj6vs_kNP0XN5sx_WndEGUBS2SA4_Hbtcv8Z48",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Arthur\",\n    \"lastName\": \"Doyle\",\n    \"documentID\": 17071943,\n    \"password\": \"SherlockHolmes\",\n    \"dateOfBirth\": \"07/07/1859\",\n    \"address\": \"Inglaterra\",\n    \"telephone\": 99895586,\n    \"email\": \"e@toto.com\",\n    \"professionalDoctor\": true,\n    \"specialty\": \"general\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/register/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MjIwNTE4ODUsInJvbGUiOiJhIiwiaWF0IjoxNzAwNDIyMTAzLCJleHAiOjE3MDA1MDg1MDN9.02m3GByBeyJu91FR55A4TWVZHO9znhaMVg0AGG5AQnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments By Date and Doc",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/test?date=12/02/2024&doctorID=10091827",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"test"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "12/02/2024"
+						},
+						{
+							"key": "doctorID",
+							"value": "10091827"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments disponibles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tst?date=12/02/2024&doctorID=10091824",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tst"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "12/02/2024"
+						},
+						{
+							"key": "doctorID",
+							"value": "10091824"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments - Error",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJihbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N1bWVudCI6MjIwNTE4ODUsInJvbGUiOiJhIiwiaWF0IjoxNzAwNDIyMTAzLCJleHAiOjE3MDA1MDg1MDN9.02m3GByBeyJu91FR55A4TWVZHO9znhaMVg0AGG5AQnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disponibilidad Citas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerFuncionarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNoteToAppointment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkAppointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
